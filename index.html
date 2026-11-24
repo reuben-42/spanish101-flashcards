@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#c2410c">
+  <title>SPA101 Flashcards</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>SPA101 <span>Flashcards</span></h1>
+    <div class="direction" role="group" aria-label="Which side to show first">
+      <button data-dir="mix" class="active">Mix</button>
+      <button data-dir="es">ES → EN</button>
+      <button data-dir="en">EN → ES</button>
+    </div>
+  </header>
+
+  <section class="stats" aria-live="polite">
+    <div><b id="stat-right">0</b><span>right</span></div>
+    <div><b id="stat-wrong">0</b><span>wrong</span></div>
+    <div><b id="stat-mastered">0</b><span>mastered</span></div>
+    <div><b id="stat-seen">0</b><span id="stat-total">seen</span></div>
+  </section>
+
+  <main class="stage">
+    <div class="card" id="card" tabindex="0" aria-label="Flashcard. Tap to flip.">
+      <div class="card-inner">
+        <div class="face front">
+          <span class="lang" id="front-lang">ESPAÑOL</span>
+          <p class="word" id="front-word"></p>
+          <span class="hint">Say it out loud, then tap to flip</span>
+        </div>
+        <div class="face back">
+          <span class="lang" id="back-lang">ENGLISH</span>
+          <p class="word" id="back-word"></p>
+          <p class="sub" id="back-sub"></p>
+          <p class="note" id="back-note" hidden></p>
+          <span class="hint">Swipe right if you got it, left if you didn't</span>
+        </div>
+      </div>
+      <div class="stamp stamp-right">GOT IT</div>
+      <div class="stamp stamp-left">MISSED</div>
+      <button class="speak" id="speak" aria-label="Hear the Spanish">🔊</button>
+    </div>
+  </main>
+
+  <nav class="controls">
+    <button class="btn wrong" id="btn-wrong" aria-label="Got it wrong">✗</button>
+    <button class="btn flip" id="btn-flip">Flip</button>
+    <button class="btn right" id="btn-right" aria-label="Got it right">✓</button>
+  </nav>
+
+  <footer class="foot">
+    <span class="keys">Keyboard: Space = flip, ← = wrong, → = right</span>
+    <button class="link" id="reset">Reset progress</button>
+  </footer>
+
+  <script src="js/vocab.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
